@@ -13,7 +13,7 @@ class ConstraintSetAnimationFragment: Fragment(), ConstraintSetAnimationUIView.L
     private var screenNavigator: ScreenNavigator? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        uiView = ConstraintSetAnimationUIView(
+        uiView = ConstraintSetAnimationUIViewImpl(
                 inflater = inflater,
                 parent = container
         )

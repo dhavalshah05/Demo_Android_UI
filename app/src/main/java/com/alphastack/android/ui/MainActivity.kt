@@ -2,6 +2,8 @@ package com.alphastack.android.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.alphastack.android.ui.screens.constraintsetanimation.ConstraintSetAnimationFragment
+import com.alphastack.android.ui.screens.constraintsetanimation.ConstraintSetAnimationUIView
 import com.alphastack.android.ui.screens.coordinator.CoordinatorFragment
 import com.ncapdevi.fragnav.FragNavController
 
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity(), ScreenNavigator {
 
     override fun navigateToCoordinatorScreen() {
         fragNavController.pushFragment(CoordinatorFragment())
+    }
+
+    override fun navigateToConstraintSetAnimationScreen() {
+        fragNavController.pushFragment(ConstraintSetAnimationFragment())
     }
 
 }

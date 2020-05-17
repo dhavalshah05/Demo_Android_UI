@@ -6,4 +6,6 @@ interface ScreenNavigator {
 
     fun navigateToCoordinatorScreen()
 
+    fun navigateToConstraintSetAnimationScreen()
+
 }

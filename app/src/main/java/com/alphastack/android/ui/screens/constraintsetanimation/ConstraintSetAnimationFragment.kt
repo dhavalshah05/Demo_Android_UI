@@ -1,19 +1,22 @@
-package com.alphastack.android.ui
+package com.alphastack.android.ui.screens.constraintsetanimation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.alphastack.android.ui.ScreenNavigator
 
-class MainFragment : Fragment(), MainUIView.Listener {
+class ConstraintSetAnimationFragment: Fragment(), ConstraintSetAnimationUIView.Listener {
 
-    private lateinit var uiView: MainUIView
-
+    private lateinit var uiView: ConstraintSetAnimationUIView
     private var screenNavigator: ScreenNavigator? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        uiView = MainUIView(inflater, null)
+        uiView = ConstraintSetAnimationUIView(
+                inflater = inflater,
+                parent = container
+        )
         screenNavigator = requireActivity() as ScreenNavigator
         return uiView.getRootView()
     }
@@ -33,12 +36,8 @@ class MainFragment : Fragment(), MainUIView.Listener {
         screenNavigator = null
     }
 
-    override fun onCoordinateButtonClicked() {
-        screenNavigator?.navigateToCoordinatorScreen()
-    }
-
-    override fun onConstraintSetAnimationButtonClicked() {
-        screenNavigator?.navigateToConstraintSetAnimationScreen()
+    override fun onBackPressed() {
+        screenNavigator?.navigateUp()
     }
 
 }

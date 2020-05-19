@@ -41,4 +41,8 @@ class MainFragment : Fragment(), MainUIView.Listener {
         screenNavigator?.navigateToConstraintSetAnimationScreen()
     }
 
+    override fun onCoordinatorWithTabButtonClicked() {
+        screenNavigator?.navigateToCoordinatorWithTabScreen()
+    }
+
 }

@@ -13,6 +13,7 @@ class MainUIView(
     interface Listener {
         fun onCoordinateButtonClicked()
         fun onConstraintSetAnimationButtonClicked()
+        fun onCoordinatorWithTabButtonClicked()
     }
 
     init {
@@ -31,6 +32,9 @@ class MainUIView(
         }
         getRootView().buttonConstraintSetAnimation.setOnClickListener {
             getListeners().forEach { it.onConstraintSetAnimationButtonClicked() }
+        }
+        getRootView().buttonCoordinatorWithTab.setOnClickListener {
+            getListeners().forEach { it.onCoordinatorWithTabButtonClicked() }
         }
     }
 

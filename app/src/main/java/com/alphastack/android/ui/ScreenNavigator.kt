@@ -8,4 +8,6 @@ interface ScreenNavigator {
 
     fun navigateToConstraintSetAnimationScreen()
 
+    fun navigateToCoordinatorWithTabScreen()
+
 }

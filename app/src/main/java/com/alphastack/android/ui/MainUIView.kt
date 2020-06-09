@@ -14,6 +14,7 @@ class MainUIView(
         fun onCoordinateButtonClicked()
         fun onConstraintSetAnimationButtonClicked()
         fun onCoordinatorWithTabButtonClicked()
+        fun onCoordinatorWithScaleImageClicked()
     }
 
     init {
@@ -35,6 +36,9 @@ class MainUIView(
         }
         getRootView().buttonCoordinatorWithTab.setOnClickListener {
             getListeners().forEach { it.onCoordinatorWithTabButtonClicked() }
+        }
+        getRootView().buttonCoordinatorWithScaleImage.setOnClickListener {
+            getListeners().forEach { it.onCoordinatorWithScaleImageClicked() }
         }
     }
 

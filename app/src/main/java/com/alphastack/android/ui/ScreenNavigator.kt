@@ -10,4 +10,6 @@ interface ScreenNavigator {
 
     fun navigateToCoordinatorWithTabScreen()
 
+    fun navigateToCoordinatorWithScaleImageScreen()
+
 }

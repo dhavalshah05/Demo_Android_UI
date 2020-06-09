@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alphastack.android.ui.screens.constraintsetanimation.ConstraintSetAnimationFragment
 import com.alphastack.android.ui.screens.coordinator.CoordinatorFragment
+import com.alphastack.android.ui.screens.coordinatorWithScaleImage.CoordinatorWithScaleImageFragment
 import com.alphastack.android.ui.screens.coordinatorWithTab.CoordinatorWithTabFragment
 import com.ncapdevi.fragnav.FragNavController
 
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity(), ScreenNavigator {
 
     override fun navigateToCoordinatorWithTabScreen() {
         fragNavController.pushFragment(CoordinatorWithTabFragment())
+    }
+
+    override fun navigateToCoordinatorWithScaleImageScreen() {
+        fragNavController.pushFragment(CoordinatorWithScaleImageFragment())
     }
 
 }

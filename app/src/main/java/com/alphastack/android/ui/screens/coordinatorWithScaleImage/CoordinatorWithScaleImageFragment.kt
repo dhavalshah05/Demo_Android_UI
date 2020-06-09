@@ -1,19 +1,25 @@
-package com.alphastack.android.ui
+package com.alphastack.android.ui.screens.coordinatorWithScaleImage
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.alphastack.android.ui.ScreenNavigator
+import com.alphastack.android.ui.utils.DisplayMetrics
 
-class MainFragment : Fragment(), MainUIView.Listener {
+class CoordinatorWithScaleImageFragment : Fragment(), CoordinatorWithScaleImageUIView.Listener {
 
-    private lateinit var uiView: MainUIView
+    private lateinit var uiView: CoordinatorWithScaleImageUIView
 
     private var screenNavigator: ScreenNavigator? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        uiView = MainUIView(inflater, null)
+        uiView = CoordinatorWithScaleImageUIViewImpl(
+                inflater = inflater,
+                parent = container,
+                deviceHeight = DisplayMetrics.getDeviceHeightInPixel(requireActivity())
+        )
         screenNavigator = requireActivity() as ScreenNavigator
         return uiView.getRootView()
     }
@@ -33,20 +39,8 @@ class MainFragment : Fragment(), MainUIView.Listener {
         screenNavigator = null
     }
 
-    override fun onCoordinateButtonClicked() {
-        screenNavigator?.navigateToCoordinatorScreen()
-    }
-
-    override fun onConstraintSetAnimationButtonClicked() {
-        screenNavigator?.navigateToConstraintSetAnimationScreen()
-    }
-
-    override fun onCoordinatorWithTabButtonClicked() {
-        screenNavigator?.navigateToCoordinatorWithTabScreen()
-    }
-
-    override fun onCoordinatorWithScaleImageClicked() {
-        screenNavigator?.navigateToCoordinatorWithScaleImageScreen()
+    override fun onBackPressed() {
+        screenNavigator?.navigateUp()
     }
 
 }
